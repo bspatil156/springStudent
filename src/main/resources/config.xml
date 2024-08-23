@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://wwws.springframework.org/schema/context/spring-context.xsd">
+
+    <!--    This is our 'Student' bean  -->
+    <!--    We set teh values for the variables using the <properties> tag  -->
+    <!--  The 'name' attribute of <properties> tag must contain same variable name as in 'Student.java'  -->
+
+    <bean class="com.Spring.Student.Student" name="MyStudent1">
+        <property name="stdId" value="12"/>
+        <!--            <value>12</value>-->
+        <!--        </property>-->
+        <property name="stdName" value="Bhavesh Patil"/>
+        <!--            <value>Bhavesh Patil</value>-->
+        <!--        </property>-->
+        <property name="stdAddress" value="Pune"/>
+        <!--            <value>Pune</value>-->
+        <!--        </property>-->
+    </bean>
+
+    <!--    Second Bean    -->
+    <bean class="com.Spring.Student.Student" name="MyStudent2">
+        <property name="stdId" value="14"/>
+        <!--            <value>14</value>-->
+        <!--        </property>-->
+        <property name="stdName" value="Dhiraj Fusekar"/>
+        <!--            <value>Dhiraj Fusekar</value>-->
+        <!--        </property>-->
+        <property name="stdAddress" value="Pune"/>
+        <!--            <value>Pune</value>-->
+        <!--        </property>-->
+    </bean>
+</beans>
