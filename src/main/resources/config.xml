@@ -11,28 +11,65 @@
     <!--    We set teh values for the variables using the <properties> tag  -->
     <!--  The 'name' attribute of <properties> tag must contain same variable name as in 'Student.java'  -->
 
-    <bean class="com.Spring.Student.Student" name="MyStudent1">
-        <property name="stdId" value="12"/>
+    <bean class="com.Spring.Student.Student" name="MyStudent1" p:stdId="12" p:stdName="Bhavesh Patil"
+    p:stdAddress="Pune" />
+<!--        <property name="stdId" value="12"/>-->
         <!--            <value>12</value>-->
         <!--        </property>-->
-        <property name="stdName" value="Bhavesh Patil"/>
+<!--        <property name="stdName" value="Bhavesh Patil"/>-->
         <!--            <value>Bhavesh Patil</value>-->
         <!--        </property>-->
-        <property name="stdAddress" value="Pune"/>
+<!--        <property name="stdAddress" value="Pune"/>-->
         <!--            <value>Pune</value>-->
         <!--        </property>-->
-    </bean>
+<!--    </bean>-->
 
     <!--    Second Bean    -->
-    <bean class="com.Spring.Student.Student" name="MyStudent2">
-        <property name="stdId" value="14"/>
+    <bean class="com.Spring.Student.Student" name="MyStudent2" p:stdId="14" p:stdName="Dhiraj Fusekar"
+    p:stdAddress="Pune" />
+<!--        <property name="stdId" value="14"/>-->
         <!--            <value>14</value>-->
         <!--        </property>-->
-        <property name="stdName" value="Dhiraj Fusekar"/>
+<!--        <property name="stdName" value="Dhiraj Fusekar"/>-->
         <!--            <value>Dhiraj Fusekar</value>-->
         <!--        </property>-->
-        <property name="stdAddress" value="Pune"/>
+<!--        <property name="stdAddress" value="Pune"/>-->
         <!--            <value>Pune</value>-->
         <!--        </property>-->
+<!--    </bean>-->
+
+    <bean  class="com.Spring.collections.studentCollection" name="stdCollection">
+        <property name="Name">
+            <list>
+                <value>Bhavesh Patil</value>
+                <value>Dhiraj Fusekar</value>
+                <value>Subodh Humne</value>
+                <value>Pratik Bansod</value>
+            </list>
+        </property>
+        <property name="city">
+            <list>
+                <value>Pune</value>
+                <value>Pune</value>
+                <value>Banglore</value>
+                <value>Jaipur</value>
+            </list>
+        </property>
+        <property name="roll_no">
+            <set>
+                <value>12</value>
+                <value>14</value>
+                <value>16</value>
+                <value>18</value>
+            </set>
+        </property>
+        <property name="courses">
+            <map>
+                <entry key="1" value="Java Full Stack" />
+                <entry key="2" value="Catia Design Engineer" />
+                <entry key="3" value="MERN Stack" />
+                <entry key="4" value="Python Full Stack" />
+            </map>
+        </property>
     </bean>
 </beans>
