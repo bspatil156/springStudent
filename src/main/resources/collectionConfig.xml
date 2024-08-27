@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://wwws.springframework.org/schema/context/spring-context.xsd">
+
+    <!--    Below is the bean for injecting dependencies of type Collection    -->
+    <bean  class="com.Spring.collections.studentCollection" name="stdCollection">
+        <property name="Name">
+            <list>
+                <value>Bhavesh Patil</value>
+                <value>Dhiraj Fusekar</value>
+                <value>Subodh Humne</value>
+                <value>Pratik Bansod</value>
+            </list>
+        </property>
+        <property name="city">
+            <list>
+                <value>Pune</value>
+                <value>Pune</value>
+                <value>Banglore</value>
+                <value>Jaipur</value>
+            </list>
+        </property>
+        <property name="roll_no">
+            <set>
+                <value>12</value>
+                <value>14</value>
+                <value>16</value>
+                <value>18</value>
+            </set>
+        </property>
+        <property name="courses">
+            <map>
+                <entry key="1" value="Java Full Stack" />
+                <entry key="2" value="Catia Design Engineer" />
+                <entry key="3" value="MERN Stack" />
+                <entry key="4" value="Python Full Stack" />
+            </map>
+        </property>
+    </bean>
+
+</beans>

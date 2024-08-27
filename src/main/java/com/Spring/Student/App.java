@@ -24,10 +24,10 @@ public class App
 //                      OR
         Student std1 = ac.getBean("MyStudent1",Student.class);
         Student std2 = (Student) ac.getBean("MyStudent2");
-        studentCollection stdcoll = (studentCollection) ac.getBean("stdCollection");
+//        studentCollection stdcoll = (studentCollection) ac.getBean("stdCollection");
         System.out.println( "Hello World!" );
         System.out.println(std1);
         System.out.println(std2);
-        System.out.println(stdcoll);
+//        System.out.println(stdcoll);
     }
 }
