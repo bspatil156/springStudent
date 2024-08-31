@@ -11,11 +11,11 @@
     <bean class="com.Spring.Reference.B" name="beanOfB">
         <property name="y" value="122" />
     </bean>
-    <bean class="com.Spring.Reference.A" name="beanOfA">
-        <property name="x" value="12" />
+    <bean class="com.Spring.Reference.A" name="beanOfA" p:x="12" p:objb-ref="beanOfB" />
+<!--        <property name="x" value="12" />-->
 <!--        <property name="objb" ref="beanOfB"/>-->
-        <property name="objb">
-            <ref bean = "beanOfB"/>
-        </property>
-    </bean>
+<!--        <property name="objb">-->
+<!--            <ref bean = "beanOfB"/>-->
+<!--        </property>-->
+<!--    </bean>-->
 </beans>
