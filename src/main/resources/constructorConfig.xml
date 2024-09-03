@@ -31,6 +31,27 @@
         <constructor-arg>
             <ref bean="beanOfMedals" />
         </constructor-arg>
+        <constructor-arg>
+            <list>
+                <value>Cricket</value>
+                <value>Football</value>
+                <value>Badminton</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+<!--  Resolving ambiguity in constructor-injection  -->
+<!--  Here the constructor with parameter type 'int','int' is called  -->
+    <bean class="com.Spring.constructorInjection.Addition" name="additionBean">
+<!--    The 'type' attribute specifies the datatype of parameter   -->
+<!--    The 'index' attribute helps us to assign the value to the variable at that index in the constructor    -->
+<!--    Indexing of 'index' attribute starts with '0'   -->
+        <constructor-arg value="12" type="int" index="1" />
+<!--            <value>12</value>-->
+<!--        </constructor-arg>-->
+        <constructor-arg value="12" type="int" index="0" />
+<!--            <value>12</value>-->
+<!--        </constructor-arg>-->
     </bean>
 
 </beans>
