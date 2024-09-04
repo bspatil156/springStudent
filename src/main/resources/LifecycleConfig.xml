@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean class="com.Spring.LifeCycle.Book" name="bookBean" p:author="Julius Verne" p:title="Around the world in 80 days" p:price="128"
+        init-method="Beginning" destroy-method="Closure" />
+<!--  The 'init-method' attribute is used to specify the init method present in the POJO Class.  -->
+<!--  The 'destroy-method' attribute is used to specify the destroy method present in the POJO Class.  -->
+
+    <bean class="com.Spring.LifeCycle.NewsPaper" name="NewsBean">
+        <property name="Name">
+            <value>The Hindu</value>
+        </property>
+        <property name="language">
+            <value>English</value>
+        </property>
+        <property name="price">
+            <value>10</value>
+        </property>
+    </bean>
+</beans>
