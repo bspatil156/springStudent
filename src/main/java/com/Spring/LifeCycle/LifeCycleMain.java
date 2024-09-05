@@ -14,5 +14,8 @@ public class LifeCycleMain {
         System.out.println("**************************************************************************************");
         NewsPaper np = ac.getBean("NewsBean", NewsPaper.class);
         System.out.println(np);
+        System.out.println("**************************************************************************************");
+        Magazine mg = ac.getBean("magazineBean",Magazine.class);
+        System.out.println(mg);
     }
 }

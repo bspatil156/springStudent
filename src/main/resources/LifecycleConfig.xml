@@ -8,6 +8,13 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+<!--  The below line enables all the annotations  -->
+<!--    <context:annotation-config />-->
+
+<!--  Enabling single annotation  -->
+<!--  Just create a bean of the annotation class  -->
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+
     <bean class="com.Spring.LifeCycle.Book" name="bookBean" p:author="Julius Verne" p:title="Around the world in 80 days" p:price="128"
         init-method="Beginning" destroy-method="Closure" />
 <!--  The 'init-method' attribute is used to specify the init method present in the POJO Class.  -->
@@ -23,5 +30,10 @@
         <property name="price">
             <value>10</value>
         </property>
+    </bean>
+
+    <bean class="com.Spring.LifeCycle.Magazine" name="magazineBean">
+        <property name="Name" value="Forbes"></property>
+        <property name="price" value="1500"></property>
     </bean>
 </beans>
