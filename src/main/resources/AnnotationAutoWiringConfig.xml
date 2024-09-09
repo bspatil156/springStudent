@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--  Enabling all annotations  -->
+    <context:annotation-config />
+
+<!--  The bean name of the reference class can be anything.  -->
+<!--  Bean name need not to be same as the object variable name as like in 'byName' attribute.  -->
+    <bean class="com.Spring.AutoWiring.Annotation.Address" name="ourAddress">
+        <property name="street" value="Shahunagar"/>
+        <property name="City" value="Pune"/>
+        <property name="pin_code" value="411046"/>
+        <property name="State" value="Maharashtra"/>
+        <property name="Country" value="India"/>
+    </bean>
+
+<!--  When using '@Autowired' with 'property' 'setter' or 'constructor' method only one 'address' bean should be defined.  -->
+<!--  Defining multiple beans while making use of sole '@Autowired' annotation raises following exception  -->
+<!--  org.springframework.beans.factory.UnsatisfiedDependencyException  -->
+<!--  We can define multiple beans while using '@Autowired' along with '@Qualifier()'.  -->
+<!--  We need to specify the bean to be used inside '@Qualifier()'.  -->
+<!--  'NoSuchBeanDefinitionException' is raised while passing bean name that doesn't exists to th '@Qualifier()' annotation.-->
+    <bean class="com.Spring.AutoWiring.Annotation.Address" name="myAddress">
+        <property name="street" value="Bijalinagar"/>
+        <property name="City" value="Pune"/>
+        <property name="pin_code" value="411033"/>
+        <property name="State" value="Maharashtra"/>
+        <property name="Country" value="India"/>
+    </bean>
+
+    <bean class="com.Spring.AutoWiring.Annotation.Employee" name="employeeBean">
+        <property name="Name" value="Bhavesh Patil" />
+        <property name="Department" value="Development" />
+    </bean>
+
+<!--    <bean class="com.Spring.AutoWiring.Annotation.Employee" name="employeeBean">-->
+<!--        <constructor-arg value="Bhavesh Patil" />-->
+<!--        <constructor-arg value="Development" />-->
+<!--    </bean>-->
+
+</beans>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean class="com.Spring.AutoWiring.Address" name="address">
+        <property name="street" value="Bijalinagar"/>
+        <property name="City" value="Pune"/>
+        <property name="pin_code" value="411033"/>
+        <property name="State" value="Maharashtra"/>
+        <property name="Country" value="India"/>
+    </bean>
+
+    <!--  If there are two or more beans of the same class while using the 'byType' attribute, below exception occurs  -->
+    <!--  UnsatisfiedDependencyException  -->
+    <bean class="com.Spring.AutoWiring.Address" name="myaddress">
+        <property name="street" value="Shahunagar"/>
+        <property name="City" value="Pune"/>
+        <property name="pin_code" value="411046"/>
+        <property name="State" value="Maharashtra"/>
+        <property name="Country" value="India"/>
+    </bean>
+
+    <!--  Here we have not used '<ref>' tag to inject the reference type.  -->
+    <!--  We can auto-wire with various attributes such as 'byName', 'byType'  -->
+    <!--  The name of the object variable must be same as the bean name of the refering class i.e. 'address' here. -->
+    <!--  If the name is bean name and variable name is different a null object is returned.  -->
+    <!--    <bean class="com.Spring.AutoWiring.Employee" name="employeeBean" autowire="byName">-->
+    <!--        <property name="Name" value="Bhavesh Patil" />-->
+    <!--        <property name="Department" value="Development" />-->
+    <!--    </bean>-->
+
+    <!--  While using 'byType' strictly use single bean for a single class. -->
+    <!--    <bean class="com.Spring.AutoWiring.Employee" name="employeeBean" autowire="byType">-->
+    <!--        <property name="Name" value="Bhavesh Patil"/>-->
+    <!--        <property name="Department" value="Development"/>-->
+    <!--    </bean>-->
+
+<!--  While using 'constructor' attribute Spring checks the name  -->
+    <bean class="com.Spring.AutoWiring.Employee" name="employeeBean" autowire="byName">
+        <property name="Name" value="Bhavesh Patil"/>
+        <property name="Department" value="Development"/>
+    </bean>
+
+</beans>
