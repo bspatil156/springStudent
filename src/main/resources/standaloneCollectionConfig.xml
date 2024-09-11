@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+
+<!--  Explicitly creating a list by using '<util:list>' tag.  -->
+<!--  We need to provide the attribute 'list-class' where we supply the class that implements 'List'.  -->
+    <util:list list-class="java.util.LinkedList" id="bookList" >
+        <value>Around the world in 80 days</value>
+        <value>Ek Hota Carver</value>
+        <value>Boardroom</value>
+        <value>111 kartutvawan Vyaktimahatwa</value>
+    </util:list>
+
+    <util:map map-class="java.util.HashMap" id="NamePriceUtil">
+        <entry key="Around the world in 80 days" value="80" />
+        <entry key="Ek Hota Carver" value="120" />
+        <entry key="Boardroom" value="86" />
+        <entry key="111 kartutvawan Vyaktimahatwa" value="60" />
+    </util:map>
+
+    <util:properties id="RankCategory">
+        <prop key="9">Around the world in 80 days</prop>
+        <prop key="9.5">Ek Hota Carver</prop>
+        <prop key="9.5">Boardroom</prop>
+        <prop key="8.5">111 kartutvawan Vyaktimahatwa</prop>
+    </util:properties>
+
+    <bean class="com.Spring.standaloneCollections.Author" name="authorBean1">
+        <property name="books" ref="bookList" />
+    </bean>
+
+    <bean class="com.Spring.standaloneCollections.Author" name="authorBean2">
+        <property name="NamePrice" ref="NamePriceUtil" />
+    </bean>
+
+    <bean class="com.Spring.standaloneCollections.Author" name="authorBean3">
+        <property name="rankCategory" ref="RankCategory" />
+    </bean>
+
+</beans>
