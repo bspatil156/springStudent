@@ -11,12 +11,12 @@ public class standaloneCollectionsMain {
         Author ath3 = ac.getBean("authorBean3",Author.class);
 //        List :
         System.out.println(ath1);
-//        Returns the class of 'bookList'.
+//        Returns the class name of 'bookList'.
         System.out.println(ath1.getBooks().getClass().getName());
 
 //        Map :
         System.out.println(ath2);
-//        Returns the class of 'NamePriceUtil'.
+//        Returns the class name of 'NamePriceUtil'.
         System.out.println(ath2.getNamePrice().getClass().getName());
 
 //        Properties :

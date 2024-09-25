@@ -4,6 +4,7 @@ import com.Spring.collections.*;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
  App.java
@@ -19,9 +20,11 @@ public class App
 //        by using it's implementation class i.e. 'ClassPathXmlApplicationContext'.
 //        'ApplicationContext' : Interface.
 //        'ClassPathXmlApplicationContext' : Implementation class of 'ApplicationContext'.
+//        'FileSystemXmlApplicationContext' : Implementation class of 'ApplicationContext'.
         ApplicationContext ac = new ClassPathXmlApplicationContext("config.xml");
 //        Student std = (Student) ac.getBean("MyStudent");
 //                      OR
+
         Student std1 = ac.getBean("MyStudent1",Student.class);
         Student std2 = (Student) ac.getBean("MyStudent2");
 //        studentCollection stdcoll = (studentCollection) ac.getBean("stdCollection");

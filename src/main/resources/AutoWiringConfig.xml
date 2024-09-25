@@ -28,8 +28,8 @@
 
     <!--  Here we have not used '<ref>' tag to inject the reference type.  -->
     <!--  We can auto-wire with various attributes such as 'byName', 'byType'  -->
-    <!--  The name of the object variable must be same as the bean name of the refering class i.e. 'address' here. -->
-    <!--  If the name is bean name and variable name is different a null object is returned.  -->
+    <!--  The name of the object variable must be same as the bean name of the refering class i.e. 'address' here while using 'byName'. -->
+    <!--  If the bean name and variable name is different a null object is returned.  -->
     <!--    <bean class="com.Spring.AutoWiring.Employee" name="employeeBean" autowire="byName">-->
     <!--        <property name="Name" value="Bhavesh Patil" />-->
     <!--        <property name="Department" value="Development" />-->
@@ -42,7 +42,7 @@
     <!--    </bean>-->
 
 <!--  While using 'constructor' attribute Spring checks the name  -->
-    <bean class="com.Spring.AutoWiring.Employee" name="employeeBean" autowire="byName">
+    <bean class="com.Spring.AutoWiring.Employee" name="employeeBean" autowire="constructor">
         <property name="Name" value="Bhavesh Patil"/>
         <property name="Department" value="Development"/>
     </bean>

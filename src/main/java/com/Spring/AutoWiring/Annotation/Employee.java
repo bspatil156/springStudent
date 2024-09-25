@@ -9,7 +9,7 @@ public class Employee {
     @Autowired
     @Qualifier("ourAddress")
 //    @Qualifier("theirAddress")
-//    'NoSuchBeanDefinitionException' is raised while passing bean name that doesn't exists to th '@Qualifier()' annotation.
+//    'NoSuchBeanDefinitionException' is raised while passing bean name that doesn't exists to the '@Qualifier()' annotation.
     private Address address;
 
     public String getName() {
