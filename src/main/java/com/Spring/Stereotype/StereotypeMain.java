@@ -10,9 +10,12 @@ public class StereotypeMain {
         Student std = ac.getBean("objNamedByMe",Student.class);
 //        std.setName("Bhavesh Patil");
 //        std.setCity("Pune");
-        System.out.println(std);
-        System.out.println(std.getBooks());
-        System.out.println(std.getBooks().getClass());
-        System.out.println(std.getBooks().getClass().getName());
+//        System.out.println(std);
+//        System.out.println(std.getBooks());
+//        System.out.println(std.getBooks().getClass());
+//        System.out.println(std.getBooks().getClass().getName());
+        System.out.println(std.hashCode());
+        Student std2 = ac.getBean("objNamedByMe",Student.class);
+        System.out.println(std2.hashCode());
     }
 }
